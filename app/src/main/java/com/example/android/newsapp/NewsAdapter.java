@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Date;
 import java.util.List;
 
@@ -51,8 +53,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
         sectionNameTextView.setText(sectionName);
 
         ImageView thumbnailImageView = (ImageView) listItemView.findViewById(R.id.thumbnail_image_view);
-        Drawable thumbnail = QueryUtils.LoadImageFromWebOperations(currentNews.getWebUrl());
-        thumbnailImageView.setImageDrawable(thumbnail);
+        String imageUrl = currentNews.getThumbnail();
+        Picasso.get().load(imageUrl).into(thumbnailImageView);
 
         // Return the list item view that is now showing the appropriate data
         return listItemView;

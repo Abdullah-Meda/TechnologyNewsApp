@@ -3,6 +3,7 @@ package com.example.android.newsapp;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,15 +53,6 @@ public class QueryUtils {
         return url;
     }
 
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-            return null;
-        }
-    }
 
     private static String makeHttpRequest(URL url) throws IOException {
         String jsonResponse = "";
@@ -122,8 +114,8 @@ public class QueryUtils {
         try {
 
             JSONObject baseJsonResponse = new JSONObject(newsJSON);
-
-            JSONArray newsArray = baseJsonResponse.getJSONArray("results");
+            JSONObject response = baseJsonResponse.getJSONObject("response");
+            JSONArray newsArray = response.getJSONArray("results");
 
             for (int i = 0; i < newsArray.length(); i++) {
 
@@ -135,10 +127,10 @@ public class QueryUtils {
                 String webUrl = currentNews.getString("webUrl");
 
                 JSONObject fields = currentNews.getJSONObject("fields");
-                Drawable thumbnail = (Drawable) fields.get("thumbnail");
+                String thumbnail = fields.getString("thumbnail");
 
                 JSONObject tags = currentNews.getJSONObject("tags");
-                String author = tags.getString("webTitle");
+                String author = tags.getString("twitterHandle");
 
                 News thisNews = new News(sectionName, webPublicationDate, webTitle, webUrl, thumbnail, author);
 
