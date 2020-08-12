@@ -1,14 +1,10 @@
 package com.example.android.newsapp;
 
-import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.ImageView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -65,8 +61,8 @@ public class QueryUtils {
         InputStream inputStream = null;
         try {
             urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setReadTimeout(10000 /* milliseconds */);
-            urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            urlConnection.setReadTimeout(10000);
+            urlConnection.setConnectTimeout(15000);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
@@ -129,12 +125,12 @@ public class QueryUtils {
                 JSONObject fields = currentNews.getJSONObject("fields");
                 String thumbnail = fields.getString("thumbnail");
 
-                JSONObject tags = currentNews.getJSONObject("tags");
-                String author = tags.getString("twitterHandle");
+                JSONArray tags = currentNews.getJSONArray("tags");
+                JSONObject tag = tags.getJSONObject(0);
+                String author = tag.getString("webTitle");
 
                 News thisNews = new News(sectionName, webPublicationDate, webTitle, webUrl, thumbnail, author);
 
-                // Add the new {@link Earthquake} to the list of earthquakes.
                 news.add(thisNews);
 
             }

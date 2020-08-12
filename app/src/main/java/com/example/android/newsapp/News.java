@@ -1,8 +1,5 @@
 package com.example.android.newsapp;
 
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-
 public class News {
 
     private String mSectionName;

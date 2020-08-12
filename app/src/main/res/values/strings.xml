@@ -4,4 +4,29 @@
     <string name="no_internet_connection">No internet connection.</string>
     <string name="no_news">No news found.</string>
 
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <string name="settings_news_from_label">News related to :</string>
+    <string name="settings_news_from_key" translatable="false">news_from</string>
+    <string name="settings_news_from_default" translatable="false">samsung</string>
+
+    <string name="settings_news_from_technology_value_1" translatable="false">samsung</string>
+    <string name="settings_news_from_technology_label_1">Samsung</string>
+
+    <string name="settings_news_from_technology_value_2" translatable="false">apple</string>
+    <string name="settings_news_from_technology_label_2">Apple</string>
+
+    <string name="settings_news_from_technology_value_3" translatable="false">nokia</string>
+    <string name="settings_news_from_technology_label_3">Nokia</string>
+
+    <string name="settings_news_from_technology_value_4" translatable="false">google</string>
+    <string name="settings_news_from_technology_label_4">Google</string>
+
+    <string name="settings_news_from_technology_value_5" translatable="false">instagram</string>
+    <string name="settings_news_from_technology_label_5">Instagram</string>
+
+    <string name="settings_news_from_technology_value_6" translatable="false">facebook</string>
+    <string name="settings_news_from_technology_label_6">Facebook</string>
+
 </resources>

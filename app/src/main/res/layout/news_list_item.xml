@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
+    android:padding="5dp"
     android:background="@drawable/news_roundrectangle">
 
     <LinearLayout
@@ -20,14 +20,13 @@
 
         <ImageView
             android:id="@+id/thumbnail_image_view"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
             android:scaleType="centerCrop"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/guardian" />
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="5dp"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -65,9 +64,10 @@
 
         <ImageView
             android:id="@+id/calendar_image_view"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:src="@drawable/calendar"
+            android:layout_marginTop="3dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"/>
@@ -76,12 +76,25 @@
             android:id="@+id/date_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
             android:text="PlaceholderText"/>
+
+        <TextView
+            android:id="@+id/divider_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:text="  |  "/>
 
         <TextView
             android:id="@+id/section_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="#F44336"
             android:text="PlaceholderText"/>
 
     </LinearLayout>
